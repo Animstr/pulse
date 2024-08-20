@@ -1,0 +1,11 @@
+.feedback{
+    padding: 100px 0 108px 0;
+    background: url('../img/bg_2.jpg') center center/cover no-repeat;
+    &__subtitle{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-top: 8px;
+    }
+}
