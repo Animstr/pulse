@@ -175,4 +175,16 @@
         height: 30px;
         font-size: 10px;
     }
+    .slider{
+        &__prev-btn{
+            img{
+                width: 20px;
+            }
+        }
+        &__next-btn{
+            img{
+                width: 20px;
+            }
+        }
+    }
 }

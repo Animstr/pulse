@@ -2,6 +2,7 @@
     font-family: 'Museo Sans Cyrl';
 }
 .container{
+    position: relative;
     width: 950px;
     margin: 0 auto;
 }
@@ -14,4 +15,8 @@
 @import 'blocks/_title.scss';
 @import 'blocks/_feedback.scss';
 @import 'blocks/_form.scss';
+@import 'blocks/slider';
+@import 'blocks/catalog';
+@import 'blocks/card';
+
 @import 'base/_media.scss';

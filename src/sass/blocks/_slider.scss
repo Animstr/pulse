@@ -1,0 +1,28 @@
+.slider{
+    position: relative;
+    margin: 81px 0;
+    
+    &__slide{
+        display: block;
+        margin: 0 auto;
+    }
+    &__prev-btn, &__next-btn {
+        width: 30px;
+        border: none;
+        position: absolute;
+        top: 50%;
+        border-radius: 100%;
+    }
+    &__next-btn{
+        right: 0;
+        img{
+            width: 30px;
+        }
+        
+    }
+    &__prev-btn{
+        img{
+            width: 30px;
+        }
+    }
+}
