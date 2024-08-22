@@ -1,0 +1,39 @@
+.footer{
+    position: relative;
+    &__contacts{
+        position: absolute;
+        width: 460px;
+        height: 270px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #C70101;
+        padding: 50px 0 56px 0;
+    }
+    &__adress{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        display: block;
+    }
+    &__tel{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        display: block;
+        margin-top: 35px;
+        text-decoration: none;
+    }
+    &__icons{
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+    }
+    &__icon{
+        margin: 0 13px;
+    }
+}

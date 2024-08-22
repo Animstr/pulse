@@ -14,7 +14,7 @@
     &__face{
         width: 50%;
         margin-right: 0;
-        transform: translateX(-100%);
+        transform: translateX(calc(calc(-100% - 20px)));
         transition: 0.5s all;
         &_active{
             transform: translateX(0);
@@ -53,7 +53,7 @@
         line-height: 14px;
         color: #C70101;
         display: block;
-        transform: translate(calc(50% - 40px), 83px);
+        transform: translate(calc(50% - 40px));
     }
     &__img{
         img{

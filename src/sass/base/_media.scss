@@ -41,6 +41,33 @@
             line-height: 42px;
         }
     }
+    .card{
+        width: 242px;
+        height: 442px;
+        padding: 15px;
+        &__price{
+            &-old{
+                font-size: 12px;
+            }
+            &-new{
+                font-size: 16px;
+            }
+        }
+        &__opportunities{
+            width: 95%;
+        }
+        &__opportunity{
+            font-size: 12px;
+        }
+        &__description{
+            font-size: 12px;
+        }
+    }
+    .button{
+        &_small{
+            width: 120px;
+        }
+    }
 }
 @media (max-width: 767px){
     .container{
@@ -82,10 +109,34 @@
             font-size: 23px;
             line-height: 40px;
         }
+        &_thin{
+            font-size: 19px;
+            font-weight: 700;
+        }
     }
     .input-form{
         flex-wrap: wrap;
         align-items:center;
+    }
+    .catalog{
+        &__tabs{
+            flex-direction: column;
+            margin-top: 15px;
+        }
+        &__tab{
+            transform: skewX(0);
+            margin-top: 7px;
+            div{
+                transform: skewX(0);
+            }
+        }
+        &__items{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .card{
+        margin-right: 0;
     }
 }
 @media (max-width: 576px){
@@ -108,6 +159,9 @@
     .button{
         width: 130px;
         height: 30px;
+        &_small{
+            width: 115px;
+        }
     }
     .promo{
         &__header{
@@ -143,6 +197,9 @@
     }
     .title{
         font-size: 20px;
+        &_thin{
+            font-size: 16px;
+        }
     }
     .feedback{
         padding: 80px 0 88px 0;
@@ -185,6 +242,81 @@
             img{
                 width: 20px;
             }
+        }
+    }
+    .catalog{
+        &__tab{
+            &:hover{
+                box-shadow: none;
+                border: none;
+            }
+        }
+    }
+    .card{
+        &__price-new{
+            font-size: 15px;
+        }
+    }
+
+    .reviews{
+        &__block{
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            margin-top: 20px;
+        }
+        &__img{
+            margin-right: 0;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10px;
+            img{
+                width: 120px;
+                height: 120px;
+            }
+        }
+        &__text{
+            text-align: center;
+            br{
+                display: none;
+            }
+        }
+        &__name{
+            font-size: 16px;
+        }
+        &__description{
+            line-height: 19px;
+            font-size: 14px;
+        }
+        &__achivements{
+            font-size: 12px;
+        }
+    }
+
+    .footer{
+        iframe{
+            height: 380px;
+        }
+        &__contacts{
+            width: 280px;
+            height: 140px;
+            padding: 20px 0;
+        }
+        &__icon{
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        &__tel{
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        &__icons{
+            margin-top: 15px;
+        }
+        &__adress{
+            font-size: 18px;
         }
     }
 }
