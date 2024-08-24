@@ -96,7 +96,115 @@ document.addEventListener('DOMContentLoaded', () => {
             activeCatalog.classList.add('catalog__cards_active');
         }
     }
+    const consultationModal = document.querySelector('[data-modal="consultation"]'),
+        overlay = document.querySelector('.overlay'),
+        buyModal = document.querySelector('[data-modal="buy"]'),
+        thanksModal = document.querySelector('[data-modal="thanks"]'),
+        buyBtns = document.querySelectorAll('[data-catalog="buy"]'),
+        consultationBtns = document.querySelectorAll('[data-btn = "consultation"]'),
+        thanksBtns = document.querySelectorAll('[data-btn="thanks"]'),
+        buyInputs = document.querySelectorAll('[data-btn="thanks"]'),
+        consultationInputs = document.querySelectorAll('[data-input="consultation"]'),
+        closeBtns = document.querySelectorAll('.modal__close'),
+        itemName = document.querySelectorAll('.card__name'),
+        namePlace = document.querySelector('[data-name="itemName"]'),
+        modal = document.querySelectorAll('.modal');
 
+        function pressModalBtn (btns, btnsmodal) {
+            btns.forEach((value, i) => {
+                value.addEventListener('click', () =>{
+                    overlay.style.display = 'block';
+                    btnsmodal.style.display = 'block';
+                    namePlace.replaceWith(itemName[i]);
+                })
+            });
+        };
+        function closeModalForms (form) {
+            form.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        /* function formChecking (btns) {
+            btns.forEach((btn) => {
+                btn.addEventListener('click', () =>{
+                    console.log('hi')
+                    thanksModal.style.display = 'block';
+                    closeModalForms(buyModal);
+                    closeModalForms(consultationModal);
+                })
+            })
+        } */
+        function closeModal () {
+            closeBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    closeModalForms(buyModal);
+                    closeModalForms(consultationModal);
+                    closeModalForms(thanksModal);
+                })
+            })
+            overlay.addEventListener('click', (e) => {
+                if (e.target.getAttribute('data-modal') == '' || e.target == overlay){
+                    closeModalForms(buyModal);
+                    closeModalForms(consultationModal);
+                    closeModalForms(thanksModal);
+                }
+            })
+        }
+
+        function numberMask(inputSelector) {
+            var input = document.querySelectorAll(inputSelector);
+            input.forEach((value) => {
+                value.addEventListener("input", mask);
+                value.addEventListener("focus", mask);
+                value.addEventListener("blur", mask);
+            
+            })
+            /***/
+            function mask (event) {
+                var blank = "+_ (___) ___-__-__";
+                
+                var i = 0;
+                var val = this.value.replace(/\D/g, "").replace(/^8/, "7"); // <---
+                
+                this.value = blank.replace(/./g, function(char) {
+                if (/[_\d]/.test(char) && i < val.length) return val.charAt(i++);
+                
+                return i >= val.length ? "" : char;
+                });
+                
+                if (event.type == "blur") {
+                if (this.value.length == 2) this.value = "";
+                } else {
+                setCursorPosition(this, this.value.length);
+                }
+            };
+            
+            /***/
+            function setCursorPosition(elem, pos) {
+                elem.focus();
+                
+                if (elem.setSelectionRange) {    
+                elem.setSelectionRange(pos, pos);
+                return;
+                }
+                
+                if (elem.createTextRange) {    
+                var range = elem.createTextRange();
+                range.collapse(true);
+                range.moveEnd("character", pos);
+                range.moveStart("character", pos);
+                range.select();      
+                return;
+                }
+            }
+        }
+       
+    numberMask('.tel');
+    pressModalBtn(buyBtns, buyModal);
+    pressModalBtn(consultationBtns, consultationModal);
+    /* formChecking(buyBtns);
+    formChecking(thanksBtns);*/
+    closeModal();
     tabs();
     cardShowMore();
     slider();

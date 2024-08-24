@@ -21,7 +21,7 @@
                 </div>
                 <div class="header__contacts">
                     <a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
-                    <button class="button">заказать звонок</button>
+                    <button data-btn = "consultation" class="button">заказать звонок</button>
                 </div>
             </header>
             <div class="promo__wraper">
@@ -32,7 +32,7 @@
                     <div class="promo__icon"><img src="icons/hand-cart.png" alt="hand-cart">Бесплатная<br>доставка</div>
                     <div class="promo__icon"><img src="icons/messages.png" alt="messages">Ответим<br>на все вопросы</div>
                 </div>
-                <button class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
+                <button data-btn = "consultation" class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
                 <div class="promo__link">
                     или
                     <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a>
@@ -67,10 +67,10 @@
             <h2 class="title title_left">Получите бесплатную консультацию <br>по подбору пульсометра </h2>
             <div class="feedback__subtitle">Просто заполните форму заявки <br>и мы перезвоним вам в течении 10 минут</div>
             <form action="" class="input-form">
-                <input required name="name" placeholder="Ваше имя" type="text">
-                <input required name="phone" placeholder="Ваш телефон" type="number">
-                <input required name="email" placeholder="Ваш E-mail" type="email">
-                <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
+                <input data-input="consultation" required name="name" placeholder="Ваше имя" type="text">
+                <input class="tel" data-input="consultation" required name="phone" placeholder="Ваш телефон" type="tel">
+                <input data-input="consultation" required name="email" placeholder="Ваш E-mail" type="email">
+                <button data-btn = "thanks" class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
         </div>
     </section>
@@ -129,7 +129,7 @@
                                     <div class="card__price-old">4 750 руб.</div>
                                     <div class="card__price-new">4 500 руб.</div>
                                 </div>
-                                <button class="button button_small">КУПИТЬ</button>
+                                <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                             </div>
                     </div>
                     <div class="card">
@@ -138,7 +138,7 @@
                                 <div class="card__img">
                                     <img src="./img/polar.jpg" alt="polar pulsometr">
                                 </div>
-                                <h2 class="card__name">Пульсометр Polar FT1</h2>
+                                <h2 class="card__name">Пульсометр Suunto M2</h2>
                                 <div class="card__description">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                                 <a href="#" class="card__show-more">ПОДРОБНЕЕ</a>
                             </div>
@@ -158,7 +158,37 @@
                                     <div class="card__price-old">4 750 руб.</div>
                                     <div class="card__price-new">4 500 руб.</div>
                                 </div>
-                                <button class="button button_small">КУПИТЬ</button>
+                                <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
+                            </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__wraper">
+                            <div class="card__face card__face_active">
+                                <div class="card__img">
+                                    <img src="./img/polar.jpg" alt="polar pulsometr">
+                                </div>
+                                <h2 class="card__name">Пульсометр Polar FT4</h2>
+                                <div class="card__description">Для первых шагов в тренировках, основанных на сердечном ритме</div>
+                                <a href="#" class="card__show-more">ПОДРОБНЕЕ</a>
+                            </div>
+                            <div class="card__back">
+                                <ul class="card__opportunities">
+                                    <li class="card__opportunity">Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
+                                    <li class="card__opportunity">Вы увидите информативный графический индикатор целевых тренировочных зон пульса;</li>
+                                    <li class="card__opportunity">Также Вы увидите информацию о расходе калорий за тренировку;</li>
+                                    <li class="card__opportunity">Вы сможете посмотреть данные по 10 тренировкам.</li>
+                                </ul>
+                                <a href="#" class="card__show-less">НАЗАД</a>
+                            </div>
+                        </div>
+                        <hr>
+                            <div class="card__footer">
+                                <div class="card__price">
+                                    <div class="card__price-old">4 750 руб.</div>
+                                    <div class="card__price-new">4 500 руб.</div>
+                                </div>
+                                <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                             </div>
                     </div>
 
@@ -188,7 +218,7 @@
                                     <div class="card__price-old">4 750 руб.</div>
                                     <div class="card__price-new">4 500 руб.</div>
                                 </div>
-                                <button class="button button_small">КУПИТЬ</button>
+                                <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                             </div>
                     </div>
 
@@ -218,7 +248,7 @@
                                     <div class="card__price-old">4 750 руб.</div>
                                     <div class="card__price-new">4 500 руб.</div>
                                 </div>
-                                <button class="button button_small">КУПИТЬ</button>
+                                <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                             </div>
                     </div>
 
@@ -248,37 +278,7 @@
                                     <div class="card__price-old">4 750 руб.</div>
                                     <div class="card__price-new">4 500 руб.</div>
                                 </div>
-                                <button class="button button_small">КУПИТЬ</button>
-                            </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card__wraper">
-                            <div class="card__face card__face_active">
-                                <div class="card__img">
-                                    <img src="./img/polar.jpg" alt="polar pulsometr">
-                                </div>
-                                <h2 class="card__name">Пульсометр Polar FT1</h2>
-                                <div class="card__description">Для первых шагов в тренировках, основанных на сердечном ритме</div>
-                                <a href="#" class="card__show-more">ПОДРОБНЕЕ</a>
-                            </div>
-                            <div class="card__back">
-                                <ul class="card__opportunities">
-                                    <li class="card__opportunity">Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                                    <li class="card__opportunity">Вы увидите информативный графический индикатор целевых тренировочных зон пульса;</li>
-                                    <li class="card__opportunity">Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                                    <li class="card__opportunity">Вы сможете посмотреть данные по 10 тренировкам.</li>
-                                </ul>
-                                <a href="#" class="card__show-less">НАЗАД</a>
-                            </div>
-                        </div>
-                        <hr>
-                            <div class="card__footer">
-                                <div class="card__price">
-                                    <div class="card__price-old">4 750 руб.</div>
-                                    <div class="card__price-new">4 500 руб.</div>
-                                </div>
-                                <button class="button button_small">КУПИТЬ</button>
+                                <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                             </div>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
                                 <div class="card__price-old">4 750 руб.</div>
                                 <div class="card__price-new">4 500 руб.</div>
                             </div>
-                            <button class="button button_small">КУПИТЬ</button>
+                            <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                         </div>
                     </div>
 
@@ -342,7 +342,7 @@
                                 <div class="card__price-old">4 750 руб.</div>
                                 <div class="card__price-new">4 500 руб.</div>
                             </div>
-                            <button class="button button_small">КУПИТЬ</button>
+                            <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                         </div>
                     </div>
 
@@ -372,7 +372,7 @@
                                 <div class="card__price-old">4 750 руб.</div>
                                 <div class="card__price-new">4 500 руб.</div>
                             </div>
-                            <button class="button button_small">КУПИТЬ</button>
+                            <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                         </div>
                     </div>
                 </div>
@@ -405,7 +405,7 @@
                                 <div class="card__price-old">4 750 руб.</div>
                                 <div class="card__price-new">4 500 руб.</div>
                             </div>
-                            <button class="button button_small">КУПИТЬ</button>
+                            <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                         </div>
                     </div>
 
@@ -435,7 +435,7 @@
                                 <div class="card__price-old">4 750 руб.</div>
                                 <div class="card__price-new">4 500 руб.</div>
                             </div>
-                            <button class="button button_small">КУПИТЬ</button>
+                            <button data-catalog = "buy" class="button button_small">КУПИТЬ</button>
                         </div>
                     </div>
                 </div>
@@ -496,6 +496,38 @@
             </div>
         </div>
     </footer>
+
+    <div class="overlay">
+        <div class="modal" data-modal="consultation">
+            <div class="modal__close">&#10006;</div>
+            <div class="modal__title">Просто заполните форму заявки</div>
+            <div class="modal__subtitle">и мы перезвоним вам в течении 10 минут</div>
+            <form action="" class="input-form input-form_small">
+                <input data-input="consultation" required name="name" placeholder="Ваше имя" type="text">
+                <input class="tel" data-input="consultation" required name="phone" placeholder="Ваш телефон" type="tel">
+                <input data-input="consultation" required name="email" placeholder="Ваш E-mail" type="email">
+                <button data-btn="thanks" class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
+            </form>
+        </div>
+
+        <div class="modal" data-modal="buy">
+            <div class="modal__close">&#10006;</div>
+            <div class="modal__title">Ваш заказ:</div>
+            <div data-name="itemName" class="modal__subtitle">Пульсометр Polar FT1</div>
+            <form action="" class="input-form input-form_small">
+                <input data-input="buy" required name="name" placeholder="Ваше имя" type="text">
+                <input class="tel" data-input="buy" required name="phone" placeholder="Ваш телефон" type="tel">
+                <input data-input="buy" required name="email" placeholder="Ваш E-mail" type="email">
+                <button data-btn="thanks" class="button button_submit">Купить</button>
+            </form>
+        </div>
+
+        <div class="modal modal_small" data-modal="thanks">
+            <div class="modal__close">&#10006;</div>
+            <div class="modal__title">Спасибо за вашу заявку!</div>
+            <div class="modal__subtitle">Наш менеджер свяжется с вами в ближайшее время!</div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
