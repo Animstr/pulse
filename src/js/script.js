@@ -108,45 +108,41 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBtns = document.querySelectorAll('.modal__close'),
         itemName = document.querySelectorAll('.card__name'),
         namePlace = document.querySelector('[data-name="itemName"]'),
-        modal = document.querySelectorAll('.modal');
+        modal = document.querySelectorAll('.modal'),
+        butn = document.querySelectorAll('.button')
+        forms = document.querySelectorAll('.input-form');
 
         function pressModalBtn (btns, btnsmodal) {
             btns.forEach((value, i) => {
                 value.addEventListener('click', () =>{
                     overlay.style.display = 'block';
                     btnsmodal.style.display = 'block';
-                    namePlace.replaceWith(itemName[i]);
+                    namePlace.innerHTML = itemName[i].innerHTML;
                 })
             });
         };
-        function closeModalForms (form) {
-            form.style.display = 'none';
+        function closeModalForms () {
+            buyModal.style.display = 'none';
+            consultationModal.style.display = 'none';
+            thanksModal.style.display = 'none';
             overlay.style.display = 'none';
         }
 
-        /* function formChecking (btns) {
-            btns.forEach((btn) => {
-                btn.addEventListener('click', () =>{
-                    console.log('hi')
-                    thanksModal.style.display = 'block';
-                    closeModalForms(buyModal);
-                    closeModalForms(consultationModal);
-                })
-            })
-        } */
         function closeModal () {
             closeBtns.forEach((btn) => {
                 btn.addEventListener('click', () => {
-                    closeModalForms(buyModal);
-                    closeModalForms(consultationModal);
-                    closeModalForms(thanksModal);
+                    closeModalForms();
+                    forms.forEach((form) => {
+                        form.reset();
+                    })
                 })
             })
             overlay.addEventListener('click', (e) => {
                 if (e.target.getAttribute('data-modal') == '' || e.target == overlay){
-                    closeModalForms(buyModal);
-                    closeModalForms(consultationModal);
-                    closeModalForms(thanksModal);
+                    closeModalForms();
+                    forms.forEach((form) => {
+                        form.reset();
+                    })
                 }
             })
         }
@@ -159,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 value.addEventListener("blur", mask);
             
             })
-            /***/
+
             function mask (event) {
                 var blank = "+_ (___) ___-__-__";
                 
@@ -178,8 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setCursorPosition(this, this.value.length);
                 }
             };
-            
-            /***/
+    
             function setCursorPosition(elem, pos) {
                 elem.focus();
                 
@@ -198,12 +193,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+
+        const ajaxSend = async (formData) => {
+            const response = await fetch("./mailer/send.php", {
+                method: "POST",
+                body: formData
+            });
+            if (!response.ok) {
+                throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`);
+            }
+            return await response.text();
+        };
+    
+        if (document.querySelector("form")) {
+            const forms = document.querySelectorAll("form");
+    
+            forms.forEach(form => {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+    
+                    ajaxSend(formData)
+                        .then((response) => {
+                            console.log(response);
+                            form.reset();
+                            closeModalForms();
+                        })
+                        .then((data) => {
+                            overlay.style.display = 'block';
+                            thanksModal.style.display = 'block';
+                        })
+                        .catch((err) => console.error(err))
+                });
+            });
+        }
+        
        
     numberMask('.tel');
     pressModalBtn(buyBtns, buyModal);
     pressModalBtn(consultationBtns, consultationModal);
-    /* formChecking(buyBtns);
-    formChecking(thanksBtns);*/
     closeModal();
     tabs();
     cardShowMore();
