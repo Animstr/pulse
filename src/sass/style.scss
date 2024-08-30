@@ -1,6 +1,12 @@
+@import 'libs/bootstrap-reboot.min';
+@import 'libs/fonts';
+
 * {
     font-family: 'Museo Sans Cyrl';
 }
+
+@import 'base/animation';
+
 .container{
     position: relative;
     width: 950px;
@@ -21,5 +27,6 @@
 @import 'blocks/reviews';
 @import 'blocks/footer';
 @import 'blocks/modal';
+@import 'blocks/scroll-top';
 
 @import 'base/_media.scss';

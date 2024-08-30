@@ -163,8 +163,12 @@
     .button{
         width: 130px;
         height: 30px;
+        line-height: 11px;
+        font-size: 11px;
         &_small{
             width: 115px;
+            font-size: 11px;
+            line-height: 11px;
         }
     }
     .promo{
@@ -190,7 +194,8 @@
     .button_main{
         margin-top: 30px;
         width: 180px;
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 11px;
     }
     .advantages{
         &__icons{
@@ -235,9 +240,10 @@
         }
     }
     .button_submit{
-        width: 150px;
-        height: 30px;
+        width: 186px;
+        height: 38px;
         font-size: 10px;
+        line-height: 10px;
     }
     .slider{
         &__prev-btn{
@@ -332,6 +338,9 @@
         padding: 10px 20px;
         h2{
             margin-top: 6px;
+        }
+        &_small{
+            min-height: 100px;
         }
     }
 }

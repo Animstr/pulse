@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const ajaxSend = async (formData) => {
-            const response = await fetch("./mailer/send.php", {
+            const response = await fetch("mailer/send.php", {
                 method: "POST",
                 body: formData
             });
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             boxClass:     'wow',     
             animateClass: 'animated', 
-            offset:       100,         
+            offset:       150,         
             mobile:       true,       
             live:         true,       
             callback:     function(box) {},

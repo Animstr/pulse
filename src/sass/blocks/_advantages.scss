@@ -12,6 +12,9 @@
         width: 70px;
         height: 70px;
         margin-top: 60px;
+        &_animated {
+            animation: heartbeat 2s ease 5 normal;
+        }
     }
     &__title{
         font-weight: 700;
